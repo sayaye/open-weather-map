@@ -1,0 +1,45 @@
+Read Me
+
+1.
+Model structure and api call ---------------------------------------------------------------------------------------------------------------------- 1. create 3 data structure, CityModel, CurrentWeatherModel and ForecastWeatherModel. 2. CityModel is used to set and get city name, latitude and longitude
+CityModel (
+val city: String, val lat: String, val lon:String
+)
+CurrentWeatherModel (
+var cityName:String,
+val coord: Coordinate,
+val weather: List<Weather>, val main:Main
+)
+ForecastWeatherModel (
+var cityName:String,
+val lat: String,
+val lon: String,
+val timezone_offset: String, val current: Current,
+val daily: List<Daily> )
+3. CityModel is used with the name of city, latitude and longitude.
+val sydney:CityModel=CityModel("Sydney","-33.868","151.207") val perth:CityModel=CityModel("Perth","-31.933","115.833")
+val hobart:CityModel=CityModel("Hobart","-42.879","147.329")
+4. CurrentWeatherModel is used to save current weather data from open weather map api, the data structure is the same as the api call.
+ val url: String = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=6ee4fe3756 b94dc8328595d892b12b4e&units=metric"
+5. ForecastWeatherModel is used to save forecast weather data from open weather map api, the data structure is the same as the api call.
+val url: String = "https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&exclude=hourly&app id=6ee4fe3756b94dc8328595d892b12b4e&units=metric"
+
+
+2.
+View ----------------------------------------------------------------------------------------------------------------------
+To swipe between screens, fragment view is used.
+UI design and xml file includes:
+1. weather_main.xml
+2. weather_item_main.xml 3. fragment_main.xml
+weather_main.xml contains a ViewPager as a container, which directs fragment_main.xml. Inside the fragment_main.xml, there is a RecyclerView, which is linked with weather_item_main.xml.
+weather_item_main.xml is used to show the forecast weather list.
+3.
+
+Controller ----------------------------------------------------------------------------------------------------------------------
+MainActivity is used to control the main view. It also contains some functions to process data. Such as
+1. getDate function to get date and save to model, as detailed date information is not directly included in the open weather map api
+2. temperatureProcessing function to process temperature information and save it to proper format
+Inside MainActivity, there is a fragment page adapter. It is used to control the swipe view. 1. In fragment view, get data from api
+
+2. Process raw data and convert data to the proper format 3. Pop data to view
+FeedAdapter is used to show the forecast weather list.
