@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+>
+
+
+    <TextView
+        android:id="@+id/line"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/colorDarkGray" />
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:id="@+id/box"
+            >
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:id="@+id/date"
+                android:text="date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:layout_marginLeft="20dp"
+                android:textSize="18dp"
+                />
+
+
+            <ImageView
+                android:id="@+id/weather_image"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="120dp"
+                android:background="@color/colorWhite"
+                android:layout_width="42dp"
+                android:layout_height="35dp" />
+
+            <TextView
+
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="60dp"
+
+                android:id="@+id/temp_max"
+                android:text="temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:textSize="18dp"
+                />
+
+
+            <TextView
+
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50dp"
+
+                android:id="@+id/seperate_line"
+                android:text="/"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18dp"
+                />
+            <TextView
+
+                android:layout_alignParentRight="true"
+                android:id="@+id/temp_min"
+                android:text="temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDarkGray"
+                android:layout_marginRight="20dp"
+                android:textSize="18dp"
+                />
+
+
+
+
+
+        </RelativeLayout>
+
+
+</RelativeLayout>
